@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>거스름돈 계산기</title>
+    <style>
+        /* 🔹 전체 배경 (핑크 + 보라 파스텔톤 그라디언트) */
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #F8BBD0, #E1BEE7, #D1C4E9);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        /* 🔹 제목 스타일 */
+        h2 {
+            font-size: 38px;  /* 글씨 크기 증가 */
+            font-weight: bold;
+            color: #6D4C41; /* 부드러운 갈색 */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            letter-spacing: 2px; /* 🔹 글자 간격 여유롭게 */
+            margin-bottom: 20px;
+        }
+    
+        /* 🔹 폼 컨테이너 */
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            padding: 30px;  /* 패딩 늘려서 여유롭게 */
+            width: 420px;  /* 전체 크기 살짝 키움 */
+            border-radius: 15px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+            animation: fadeIn 1s ease-in-out;
+        }
+    
+        /* 🔹 폼 그룹 (한 줄 정렬) */
+        .form-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 20px; /* 🔹 간격 더 넓게 */
+        }
+    
+        /* 🔹 라벨 스타일 */
+        .form-group label {
+            font-size: 20px;  /* 글씨 키움 */
+            font-weight: bold;
+            color: #8D6E63; /* 부드러운 갈색 */
+            width: 35%;
+            text-align: left;
+            letter-spacing: 1px;  /* 글자 간격 */
+        }
+    
+        /* 🔹 입력 필드 */
+        .form-group input {
+            width: 60%;
+            padding: 12px;  /* 크기 키움 */
+            font-size: 18px; /* 글씨 키움 */
+            border: 2px solid #B39DDB; /* 연한 보라색 */
+            border-radius: 8px;
+            outline: none;
+            transition: all 0.3s ease-in-out;
+        }
+    
+        /* 🔹 입력 필드 포커스 효과 */
+        .form-group input:focus {
+            border-color: #9575CD; /* 살짝 더 진한 보라 */
+            box-shadow: 0px 0px 8px rgba(149, 117, 205, 0.6);
+        }
+    
+        /* 🔹 버튼 스타일 (파스텔 핑크 + 보라) */
+        button {
+            width: 100%;
+            padding: 14px; /* 버튼 크기 키움 */
+            font-size: 20px; /* 글씨 키움 */
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(45deg, #CE93D8, #F48FB1);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            letter-spacing: 1px;  /* 🔹 글씨 간격 */
+        }
+    
+        /* 🔹 버튼 호버 효과 */
+        button:hover {
+            background: linear-gradient(45deg, #AB47BC, #F06292);
+            transform: scale(1.05);
+        }
+    
+        /* 🔹 에러 메시지 */
+        .error {
+            color: #D32F2F; /* 진한 레드 */
+            font-size: 18px;  /* 글씨 키움 */
+            margin-top: 10px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+    
+        /* 🔹 페이드인 애니메이션 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    
+    
+</head>
+<body>
+    <h1>💰거스름돈 계산기💰</h1>
+    
+    <div class="container">
+        <form action="/" method="POST"> 
+            <label for="total">💵 총 금액 (원)</label><br>
+            <input type="number" id="total" name="total" required><br>
+
+            <label for="paid">💳 지불한 금액 (원)</label><br>
+            <input type="number" id="paid" name="paid" required><br>
+
+            <button type="submit">계산하기</button>
+        </form>
+
+    {% if total %}
+    <h3>가격: {{total}}원</h3>
+    <h3>지불한 금액: {{paid}}원</h3>
+    <h3>거스름돈: {{amount}}원</h3>
+    <h3>500원: {{coin500}}개</h3>
+    <h3>100원: {{coin100}}개</h3>
+    <h3>50원: {{coin50}}개</h3>
+    <h3>10원: {{coin10}}개</h3>
+    {% endif %}
+
+    {% if error %}
+    <h3>{{error}}</h3>
+    {% endif %}
+
+    
+</body>
+</html>
