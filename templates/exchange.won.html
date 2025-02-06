@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>환전 시스템</title>
+    <title>거스름돈 계산기</title>
     <style>
         body {
             font-family: 'Pretendard', 'Arial', sans-serif;
@@ -68,7 +68,7 @@
             background: white;
             box-shadow: 0px 0px 8px rgba(49, 130, 246, 0.2);
         }
-
+    
         button {
             width: 100%;
             padding: 16px;
@@ -104,13 +104,21 @@
                 transform: translateY(0);
             }
         }
-    </style>    
+    </style>
 </head>
 <body>
-    <h1>💱환전하려는 화폐종류를 선택하세요💱</h1>
-    <a href="/dollar">💲달러화💲</a>
-    <a href="/won">🪙원화🪙</a>
-    
-    
+    <h1>💱원화 환전💱</h1>
+    <div class="form-container">
+        <form action="/won" method="POST">
+            <div class="form-group">
+                <label for="total">환전할 금액(원):</label>
+                <input type="number" id="total" name="total" min="1" required>
+            </div>
+            <button type="submit">계산하기</button>
+        </form>
+    </div>
+    {{render_html | default('') | safe}}
+    <h3><a href='/won'>🐣다시 계산하기🐣</a></h3>
+    <h3><a href='/'>🏠홈으로🏠</a></h3>
 </body>
 </html>
