@@ -88,6 +88,8 @@
             cursor: pointer;
             transition: all 0.3s ease-in-out;
             letter-spacing: 1px; 
+
+        }
     
      
         button:hover {
@@ -131,20 +133,7 @@
 
             <button type="submit">계산하기</button>
         </form>
-
-    {% if total %}
-    <h3>가격: {{total}}원</h3>
-    <h3>지불한 금액: {{paid}}원</h3>
-    <h3>거스름돈: {{amount}}원</h3>
-    <h3>500원: {{coin500}}개</h3>
-    <h3>100원: {{coin100}}개</h3>
-    <h3>50원: {{coin50}}개</h3>
-    <h3>10원: {{coin10}}개</h3>
-    {% endif %}
-
-    {% if error %}
-    <h3>{{error}}</h3>
-    {% endif %}
-
+        {{render_html | default('') | safe}}
+    
 </body>
 </html>
