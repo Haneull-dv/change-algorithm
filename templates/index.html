@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>환전 시스템</title>
     <style>
+        /* 배경을 부드러운 하늘색 그라데이션으로 변경 */
         body {
             font-family: 'Pretendard', 'Arial', sans-serif;
             text-align: center;
-            background: linear-gradient(135deg, #F2F4F6, #E3E5E8);
+            background: linear-gradient(135deg, #B3E5FC, #81D4FA);
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -16,53 +17,64 @@
             justify-content: center;
             margin: 0;
         }
-    
-        h2 {
-            font-size: 32px; 
-            font-weight: 600;
-            color: #333D4B; 
-            letter-spacing: -0.5px;
-            margin-bottom: 24px;
-        }
-    
-        .form-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+
+        /* 카드 스타일의 전체 박스 */
+        .container {
             background: white;
-            padding: 24px;
-            width: 360px;
+            padding: 30px;
+            width: 400px;
             border-radius: 20px;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.08);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
             animation: fadeIn 0.8s ease-in-out;
         }
-    
+
+        /* 제목 스타일 */
+        h2 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #333D4B;
+            margin-bottom: 20px;
+        }
+
+        /* 환전 박스 (달러 & 원화) */
+        .exchange-box {
+            background: #F9FAFB;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+            margin-bottom: 16px;
+        }
+
+        .exchange-box h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
         .form-group {
             display: flex;
             flex-direction: column;
             width: 100%;
-            margin-bottom: 16px; 
+            margin-bottom: 12px;
         }
-    
+
         .form-group label {
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 500;
-            color: #3D3D3D; 
             text-align: left;
             margin-bottom: 6px;
         }
-    
+
         .form-group input {
             width: 100%;
-            padding: 14px;
+            padding: 12px;
             font-size: 16px;
             border: 1px solid #CBD5E1;
-            border-radius: 12px;
-            outline: none;
+            border-radius: 10px;
             background: #F9FAFB;
-            transition: all 0.3s ease-in-out;
+            outline: none;
         }
-    
+
         .form-group input:focus {
             border-color: #3182F6;
             background: white;
@@ -71,29 +83,22 @@
 
         button {
             width: 100%;
-            padding: 16px;
-            font-size: 18px;
+            padding: 14px;
+            font-size: 16px;
             font-weight: 600;
             color: white;
             background: #3182F6;
             border: none;
-            border-radius: 12px;
+            border-radius: 10px;
             cursor: pointer;
             transition: all 0.3s ease-in-out;
         }
-    
+
         button:hover {
             background: #2563EB;
             transform: scale(1.02);
         }
-    
-        .error {
-            color: #D32F2F;
-            font-size: 14px;
-            margin-top: 10px;
-            font-weight: 500;
-        }
-    
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -108,7 +113,7 @@
 </head>
 <body>
     <h1>💱환전하려는 화폐종류를 선택하세요💱</h1>
-    <a href="/dollar">💲달러화💲</a>
+    <a href="/dollar">💲달러💲</a>
     <a href="/won">🪙원화🪙</a>
     
     
