@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탐욕 알고리즘 배낭 문제 연습</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 30px;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            text-align: left;
+        }
+        input {
+            width: 100px;
+            margin: 5px;
+            padding: 5px;
+            font-size: 16px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>🛍️ 분할 가능 배낭 문제 해결 🛍️</h2>
+
+    <div class="container">
+        <form action='/bag' method="POST">
+            <label><b>총 용량</b></label><br>
+            <input type="number" name="total" value="10" min="0" required>
+            <br><br>
+
+            <table>
+                <tr>
+                    <th>물체</th>
+                    <th>무게</th>
+                    <th>이익</th>
+                </tr>
+                <tr>
+                    <td>물체 1</td>
+                    <td><input type="number" name="it_w1" min="0" required></td>
+                    <td><input type="number" name="it_p1" min="0" required></td>
+                </tr>
+                <tr>
+                    <td>물체 2</td>
+                    <td><input type="number" name="it_w2" min="0" required></td>
+                    <td><input type="number" name="it_p2" min="0" required></td>
+                </tr>
+                <tr>
+                    <td>물체 3</td>
+                    <td><input type="number" name="it_w3" min="0" required></td>
+                    <td><input type="number" name="it_p3" min="0" required></td>
+                </tr>
+                <tr>
+                    <td>물체 4</td>
+                    <td><input type="number" name="it_w4" min="0" required></td>
+                    <td><input type="number" name="it_p4" min="0" required></td>
+                </tr>
+            </table>
+
+            <button type="submit">계산하기</button>
+        </form>
+    </div>
+
+    {{ render_html | default('') | safe }}
+
+    <h3><a href='/bag'>🐣 다시 계산하기 🐣</a></h3>
+    <h3><a href='/'>🏠 홈으로 🏠</a></h3>
+
+</body>
+</html>

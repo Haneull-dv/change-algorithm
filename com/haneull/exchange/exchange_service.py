@@ -66,7 +66,7 @@ class ExchangeService:
             temp += f"{currency}{currency_unit}: {count}개<br/>"
         return temp
 
-    def print_currency_dict(self, currency_dict, exchange):
+    def print_currency_dict(self, exchange, currency_dict):
         print("-------💰거스름돈💰-------") 
         if exchange == 'USD': 
             for currency, count in currency_dict.items():
