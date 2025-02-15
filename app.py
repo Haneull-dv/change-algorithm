@@ -70,8 +70,9 @@ def bag():
         it_w3 = it_w3, it_w4 = it_w4, it_p1 = it_p1, it_p2 = it_p2, it_p3 = it_p3, it_p4 = it_p4)
         resp: BagModel = controller.get_result()
 
-        render_html = '<h1>결과보기</h1>'
-        render_html += str(resp.total_profit)
+        render_html = "<h1>결과보기</h1>"
+        render_html += "<h3>최대 이익:</h3>" + str(resp.total_profit)
+        render_html += "<h3>담을 항목:</h3>" + str(resp.selected_box)
         return render_template('bag/bag.html', render_html = render_html)
     
     else: 

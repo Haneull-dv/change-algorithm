@@ -12,6 +12,7 @@ class BagModel:
     it_p3 : int
     it_p4 : int
     total_profit : int
+    selected_box: list
 
     @property
     def total(self) -> str: return self._total
@@ -53,3 +54,7 @@ class BagModel:
     def total_profit(self) -> int: return self._total_profit
     @total_profit.setter
     def total_profit(self,total_profit): self._total_profit = total_profit
+    @property
+    def selected_box(self) -> list: return self._selected_box
+    @selected_box.setter
+    def selected_box(self,selected_box): self._selected_box = selected_box

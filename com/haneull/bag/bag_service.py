@@ -32,17 +32,20 @@ class BagService:
 
         remain_weight = bag.total
         total_profit = 0
-
+        selected_box= []
         for i in range(4):
             # 3, 4, 4, 3 -> 10. 7, 3, 0
             if items[i].get("weight") <= remain_weight: 
                 remain_weight -= items[i].get("weight")
                 total_profit += items[i].get("profit")
+                selected_box.append(items[i].get("name"))
             else:
                 total_profit = total_profit + remain_weight*items[i].get("profit_per_weight")
+                selected_box.append(items[i].get("name"))
                 break
 
         bag.total_profit = total_profit
+        bag.selected_box = selected_box
         return bag
 
 
