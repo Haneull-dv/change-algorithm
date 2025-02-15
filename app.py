@@ -71,8 +71,8 @@ def bag():
         resp: BagModel = controller.get_result()
 
         render_html = '<h1>결과보기</h1>'
-        render_html += resp.result
-        return render_template('bag/bag.html')
+        render_html += str(resp.total_profit)
+        return render_template('bag/bag.html', render_html = render_html)
     
     else: 
         return render_template('bag/bag.html')

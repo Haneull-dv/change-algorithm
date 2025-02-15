@@ -11,8 +11,7 @@ class BagModel:
     it_p2 : int
     it_p3 : int
     it_p4 : int
-    # items: dict ??
-    result : str
+    total_profit : int
 
     @property
     def total(self) -> str: return self._total
@@ -51,6 +50,6 @@ class BagModel:
     @it_p4.setter
     def it_p4(self,it_p4): self._it_p4 = it_p4
     @property
-    def result(self) -> int: return self._result
-    @result.setter
-    def result(self,result): self._result = result
+    def total_profit(self) -> int: return self._total_profit
+    @total_profit.setter
+    def total_profit(self,total_profit): self._total_profit = total_profit
